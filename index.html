@@ -3,7 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
- 
+  <title>Xem Mô Hình 3D</title>
+
   <script type="module"
     src="https://unpkg.com/@google/model-viewer@4.1.0/dist/model-viewer.min.js">
   </script>
@@ -12,20 +13,48 @@
     body {
       margin: 0;
       font-family: Arial, sans-serif;
-      background: #f5f3ee;
+      background: #f5f3ee; /* Đổi mã màu tại đây nếu bạn muốn màu nền khác */
       text-align: center;
       color: #294637;
     }
 
-    h1 { padding: 0 16px; font-size: 26px; }
+    h1 {
+      padding: 12px 16px 0;
+      margin: 0;
+      font-size: 22px;
+    }
+
+    .toolbar {
+      padding: 10px 16px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .file-label {
+      display: inline-block;
+      padding: 8px 16px;
+      border-radius: 20px;
+      background: #294637;
+      color: white;
+      font-size: 14px;
+      cursor: pointer;
+    }
+
+    input[type="file"] {
+      display: none;
+    }
 
     model-viewer {
       width: 100%;
       height: 75vh;
-      background: #e8ede5;
+      background: transparent; /* Trong suốt để đồng nhất 1 màu với body */
+      position: relative;
     }
 
-    button {
+    button[slot="ar-button"] {
       position: absolute;
       bottom: 24px;
       left: 50%;
@@ -39,7 +68,11 @@
       cursor: pointer;
     }
 
-    p { padding: 0 16px; line-height: 1.6; }
+    p {
+      padding: 0 16px;
+      line-height: 1.6;
+      margin: 8px 0;
+    }
   </style>
 </head>
 
